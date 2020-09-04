@@ -25,28 +25,42 @@ export const AnnouncementForm = () => {
   return (
     <>
     { redirectState && <Redirect to="/"/> }
-    <h3>Create new announcement!</h3>
+    <h3 className="mt-2 mb-4 text-center">Create new announcement!</h3>
 
-    { alert ? <p>{alert}</p> : null}
+    { 
+      alert 
+      ? 
+        <div className="alert alert-warning" role="alert">
+          {alert}
+        </div>
+      : 
+        null
+    }
+
     <form onSubmit={submitHandler}>
-      <label>
-        Title
+      <div className="form-group">
+        <label htmlFor="title">Title</label>
         <input 
+          className="form-control"
           onChange={setFormChange} 
           id="title" 
           type="text" 
           value={formState.title}
         />
-      </label>
-      <label>
-        Description
+      </div>
+      <div className="form-group">
+        <label htmlFor="description">Description</label>
         <textarea 
+          className="form-control"
           onChange={setFormChange} 
           id="description"
           value={formState.description}
-        ></textarea>
-      </label>
-      <button type="submit">Add announcement</button>
+        >
+        </textarea>
+      </div>
+      <div className="form-group">
+        <button className="btn btn-primary float-right" type="submit">Add announcement</button>
+      </div>
     </form>
     </>
   );
