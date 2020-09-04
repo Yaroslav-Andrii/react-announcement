@@ -47,15 +47,16 @@ export const Announcement = ({ match }) => {
         />
       :
         <>
-        <h3>{title}</h3>
-        <div>
+        <h3 className="mt-2 mb-4 text-center">{title}</h3>
+        <div className="text-justify mb-4 announcement-desc">
           <p>{description}</p>
+          <span className="float-right small"><b>{date}</b></span>
         </div>
-        <span>{date}</span>
-        <button onClick={switchModeState}>Update</button>
+        
+        <button className="btn btn-info btn-sm mr-2" onClick={switchModeState}>UPDATE</button>
         </>
     }
-    <button onClick={deleteAnnouncementHandler}>Delete Announcement</button>
+    <button className="btn btn-danger btn-sm" onClick={deleteAnnouncementHandler}>DELETE</button>
     <SameAnnouncements title={title} parentId={id}/>
     </>
   );
