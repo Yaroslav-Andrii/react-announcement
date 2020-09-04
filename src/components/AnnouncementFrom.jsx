@@ -55,6 +55,7 @@ export const AnnouncementForm = () => {
           onChange={setFormChange} 
           id="description"
           value={formState.description}
+          rows="10"
         >
         </textarea>
       </div>
