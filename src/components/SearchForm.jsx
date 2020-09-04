@@ -1,9 +1,9 @@
 import React from 'react';
 
-export const SearchForm = () => {
+export const SearchForm = ({filter}) => {
   return (
-    <h3>
-      SearchForm
-    </h3>
+    <form>
+      <input onChange={e => filter(e.target.value)} type="text" placeholder="find announcment"/>
+    </form>
   );
 }
