@@ -5,16 +5,17 @@ import { AnnouncementList } from './components/AnnouncementList';
 import { Announcement } from './components/Announcement';
 import { NavBar } from './components/NavBar';
 import { NotFoundPage } from './components/NotFoundPage';
+import { ROOT } from './rootUrl';
 
 function App() {
   return (
     <BrowserRouter>
-      <NavBar/>
+      <NavBar root={ROOT}/>
       <div className="container">
         <Switch>
-          <Route path={'/'} exact component={AnnouncementList}/>
-          <Route path={'/create'} component={AnnouncementForm}/>
-          <Route path={'/announcement/:id'} component={Announcement}/>
+          <Route path={ROOT} exact component={AnnouncementList}/>
+          <Route path={`${ROOT}create`} component={AnnouncementForm}/>
+          <Route path={`${ROOT}announcement/:id`} component={Announcement}/>
           <Route path={'*'} component={NotFoundPage}/>
         </Switch>
       </div>

@@ -2,6 +2,7 @@ import React, {  useState } from 'react';
 import { useSelector } from 'react-redux';
 import { SearchForm } from './SearchForm';
 import { NavLink } from 'react-router-dom';
+import { ROOT } from '../rootUrl';
 
 export const AnnouncementList = () => {
   const announcements = useSelector(state => state.announcementState.announcements);
@@ -30,7 +31,7 @@ export const AnnouncementList = () => {
             announcemetsList.map(announcement => {
                 return (
                   <li className="list-group-item list-group-item-action" key={announcement.id}>
-                    <NavLink to={`/announcement/${announcement.id}`}>{announcement.title}</NavLink>
+                    <NavLink to={`${ROOT}announcement/${announcement.id}`}>{announcement.title}</NavLink>
                   </li>)
               }) 
             : 

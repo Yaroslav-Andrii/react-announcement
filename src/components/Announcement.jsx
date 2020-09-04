@@ -5,6 +5,7 @@ import { Redirect } from 'react-router-dom';
 import { deleteAnnouncement } from '../data/announcementsActions';
 import { SameAnnouncements } from './SameAnnouncements';
 import { Confirm } from './Confirm';
+import { ROOT } from '../rootUrl';
 
 export const Announcement = ({ match }) => {
   const dispatch = useDispatch();
@@ -35,7 +36,7 @@ export const Announcement = ({ match }) => {
     <>
     
     {isConfirm && <Confirm message="Do you really want to delete the announcement?" callback={deleteAnnouncementCallback}/>}
-    {redirectState && <Redirect to="/"/>}
+    {redirectState && <Redirect to={ROOT}/>}
     {
       changeMode 
       ? 

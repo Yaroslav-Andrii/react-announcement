@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { addAnnouncement } from '../data/announcementsActions';
 import { Redirect } from 'react-router-dom';
+import { ROOT } from '../rootUrl';
 
 export const AnnouncementForm = () => {
   const dispatch = useDispatch();
@@ -24,7 +25,7 @@ export const AnnouncementForm = () => {
 
   return (
     <>
-    { redirectState && <Redirect to="/"/> }
+    { redirectState && <Redirect to={ROOT}/> }
     <h3 className="mt-2 mb-4 text-center">Create new announcement!</h3>
 
     { 

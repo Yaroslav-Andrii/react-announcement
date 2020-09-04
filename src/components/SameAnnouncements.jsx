@@ -1,6 +1,7 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
+import { ROOT } from '../rootUrl';
 
 export const SameAnnouncements = ({ title, parentId, sameListLength = 3 }) => {
   const sameAnnouncemetsList = useSelector( ({ announcementState: {announcements} }) => {
@@ -29,7 +30,7 @@ export const SameAnnouncements = ({ title, parentId, sameListLength = 3 }) => {
         sameAnnouncemetsList.map(announcement => {
           return (
             <li className="list-group-item list-group-item-action" key={announcement.id}>
-              <NavLink to={`/announcement/${announcement.id}`}>{announcement.title}</NavLink>
+              <NavLink to={`${ROOT}announcement/${announcement.id}`}>{announcement.title}</NavLink>
             </li>)
           }) 
         :             
