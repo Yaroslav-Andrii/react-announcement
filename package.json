@@ -2,7 +2,7 @@
   "name": "react-announcement",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://Yaroslav-Andrii.github.io/react-announcement-deploy",
+  "homepage": "http://Yaroslav-Andrii.github.io/react-announcement",
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
