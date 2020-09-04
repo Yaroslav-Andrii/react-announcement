@@ -34,7 +34,7 @@ export const Announcement = ({ match }) => {
   return (
     <>
     
-    {isConfirm && <Confirm message="Do you really want to delete the announcement" callback={deleteAnnouncementCallback}/>}
+    {isConfirm && <Confirm message="Do you really want to delete the announcement?" callback={deleteAnnouncementCallback}/>}
     {redirectState && <Redirect to="/"/>}
     {
       changeMode 

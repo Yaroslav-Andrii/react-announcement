@@ -8,9 +8,13 @@ export const Confirm = ({message, callback}) => {
 
   return (
     <>
-    <h4>{message}</h4>
-    <button onClick={clickHandler} name="true">Yes</button>
-    <button onClick={clickHandler} name="false">No</button>
+    <div className="alert alert-danger mt-2" role="alert">{message}</div>
+
+    <div className="btn-group float-right btn-group-sm" role="group" aria-label="Basic example">
+      <button className="btn btn-danger" onClick={clickHandler} name="true">Yes</button>
+      <button className="btn btn-secondary" onClick={clickHandler} name="false">No</button>
+    </div>
+    <div className="clearfix"></div>
     </>
   )
 }
