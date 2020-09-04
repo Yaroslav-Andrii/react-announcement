@@ -10,12 +10,14 @@ function App() {
   return (
     <BrowserRouter>
       <NavBar/>
-      <Switch>
-        <Route path={'/'} exact component={AnnouncementList}/>
-        <Route path={'/create'} component={AnnouncementForm}/>
-        <Route path={'/announcement/:id'} component={Announcement}/>
-        <Route path={'*'} component={NotFoundPage}/>
-      </Switch>
+      <div className="container">
+        <Switch>
+          <Route path={'/'} exact component={AnnouncementList}/>
+          <Route path={'/create'} component={AnnouncementForm}/>
+          <Route path={'/announcement/:id'} component={Announcement}/>
+          <Route path={'*'} component={NotFoundPage}/>
+        </Switch>
+      </div>
     </BrowserRouter>
   );
 }

@@ -1,0 +1,17 @@
+.search-form, 
+.search-form>*>input,
+.announcements-list {
+  width: 100%
+}
+
+.announcements-list>li{
+  padding: 0;
+}
+.announcements-list>li>a {
+  display: block;
+  padding: .75rem 1.25rem;
+}
+.announcements-list>li>a:hover {
+  text-decoration: none;
+  color: #007bff;
+}

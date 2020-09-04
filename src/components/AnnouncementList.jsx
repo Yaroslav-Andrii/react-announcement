@@ -18,22 +18,26 @@ export const AnnouncementList = () => {
   }
 
   return (  
-    <>
-      <SearchForm filter={searchHandler}/>
-      <ul>
-        {
-          announcemetsList.length 
-          ?
-          announcemetsList.map(announcement => {
-              return (
-                <li key={announcement.id}>
-                  <NavLink to={`/announcement/${announcement.id}`}>{announcement.title}</NavLink>
-                </li>)
-            }) 
-          : 
-            "List of announcements is empty"
-        }
-      </ul>
-    </>
+    <div className="container">
+      <div className="row">
+        <SearchForm filter={searchHandler}/>
+      </div>
+      <div className="row">
+        <ul className="list-group announcements-list">
+          {
+            announcemetsList.length 
+            ?
+            announcemetsList.map(announcement => {
+                return (
+                  <li className="list-group-item list-group-item-action" key={announcement.id}>
+                    <NavLink to={`/announcement/${announcement.id}`}>{announcement.title}</NavLink>
+                  </li>)
+              }) 
+            : 
+              "List of announcements is empty"
+          }
+        </ul>
+      </div>
+    </div>
   );
 }
