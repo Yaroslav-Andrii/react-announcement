@@ -17,7 +17,7 @@ export const AnnouncementChangeFrom = ({title, description, id, modeSwitcher}) =
 
   function submitHandler(event) {
     event.preventDefault();
-    if (announcement.title && announcement.description) {
+    if (announcement.title.trim() && announcement.description.trim()) {
       dispatch( updateAnnouncement(announcement) );
       modeSwitcher();
     } else {

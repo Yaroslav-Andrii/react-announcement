@@ -14,7 +14,7 @@ export const AnnouncementForm = () => {
   function submitHandler(event) {
     event.preventDefault();
 
-    if (formState.title && formState.description) {
+    if (formState.title.trim() && formState.description.trim()) {
       dispatch( addAnnouncement(formState) );
       setRedirectState(true);
     } else {
