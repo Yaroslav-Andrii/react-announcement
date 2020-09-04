@@ -1,0 +1,3 @@
+export const ADD = 'ANNOUNCEMENT_ADD';
+export const DELETE = 'ANNOUNCEMENT_DELETE';
+export const UPDATE = 'ANNOUNCEMENT_UPDATE';
