@@ -21,18 +21,47 @@ export const AnnouncementChangeFrom = ({title, description, id, modeSwitcher}) =
       dispatch( updateAnnouncement(announcement) );
       modeSwitcher();
     } else {
-      setAlert("Field can't be empty");
+      setAlert("Field can't be empty!");
     }
   }
 
   return (
     <>
-    {alert ? <h4>{alert}</h4> : null}
-    <form onSubmit={submitHandler}>
-      <input type="text" name="title" onChange={inputHandler} value={announcement.title}/>
-      <textarea name="description" onChange={inputHandler} value={announcement.description}></textarea>
-
-      <button type="submit">Save</button>
+    { 
+      alert 
+      ? 
+        <div className="alert alert-warning mt-2" role="alert">
+          {alert}
+        </div>
+      : 
+        null
+    }
+    <form className="mt-2" onSubmit={submitHandler}>
+      <div className="form-group">
+        <label htmlFor="title">Title</label>
+        <input 
+          id="title" 
+          type="text" 
+          name="title" 
+          onChange={inputHandler} 
+          value={announcement.title}
+          className="form-control"  
+        />
+      </div>
+      <div className="form-group">
+        <label htmlFor="description">Description</label>
+        <textarea 
+          name="description" 
+          onChange={inputHandler} 
+          value={announcement.description}
+          id="description"
+          className="form-control"
+          rows="10"
+        >
+        </textarea>
+      </div>
+      <div className="form-group"><button className="btn btn-success btn-sm" type="submit">SAVE</button></div>
+      
     </form>
     </>
   )
