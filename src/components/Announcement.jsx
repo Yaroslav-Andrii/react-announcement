@@ -52,11 +52,13 @@ export const Announcement = ({ match }) => {
           <p>{description}</p>
           <span className="float-right small"><b>{date}</b></span>
         </div>
-        
-        <button className="btn btn-info btn-sm mr-2" onClick={switchModeState}>UPDATE</button>
+
+        <div className="btn-group">
+          <button className="btn btn-info btn-sm" onClick={switchModeState}>UPDATE</button>
+          <button className="btn btn-danger btn-sm" onClick={deleteAnnouncementHandler}>DELETE</button>
+        </div>
         </>
     }
-    <button className="btn btn-danger btn-sm" onClick={deleteAnnouncementHandler}>DELETE</button>
     <SameAnnouncements title={title} parentId={id}/>
     </>
   );
