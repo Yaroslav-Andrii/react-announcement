@@ -22,13 +22,13 @@ export const SameAnnouncements = ({ title, parentId, sameListLength = 3 }) => {
   }
   
   return (
-    <ul>
+    <ul className="list-group announcements-list mt-5">
       {
         sameAnnouncemetsList.length 
         ?
         sameAnnouncemetsList.map(announcement => {
           return (
-            <li key={announcement.id}>
+            <li className="list-group-item list-group-item-action" key={announcement.id}>
               <NavLink to={`/announcement/${announcement.id}`}>{announcement.title}</NavLink>
             </li>)
           }) 
